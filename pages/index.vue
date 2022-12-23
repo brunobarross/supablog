@@ -1,13 +1,14 @@
 <template>
-  <SectionCard/>
+  <div>
+    <IntroBlog />
+    <SectionCard />
+  </div>
 </template>
 
-<script>
-
-import SectionCard from '../components/SectionCard.vue';
-
-export default {
-    name: "IndexPage",
-    components: { SectionCard}
+<script setup>
+import IntroBlog from "../components/IntroBlog.vue";
+import SectionCard from "../components/SectionCard.vue";
+components: {
+  SectionCard, IntroBlog;
 }
 </script>

@@ -38,7 +38,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxt/postcss8',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/svg'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -54,5 +55,16 @@ export default {
         autoprefixer: {},
       },
     },
+    svg: {
+      vueSvgLoader: {
+          // vue-svg-loader options
+      },
+      svgSpriteLoader: {
+          // svg-sprite-loader options
+      },
+      fileLoader: {
+          // file-loader options
+      }
+  }
   }
 }

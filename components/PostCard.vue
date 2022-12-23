@@ -1,20 +1,19 @@
 <template>
-  <div class="post flex flex-col cursor-pointer">
+  <div class="post grid grid-cols-2 cursor-pointer mt-8">
     <div class="cover">
       <img
         src="../assets/img/Article_Image.png"
-        class="rounded-md w-full object-cover"
+        class="rounded-md w-full object-cover "
       />
     </div>
-    <div class="content mt-8">
+    <div class="content ml-4 flex-1 flex flex-col ">
       <h3 class="text-lg font-bold leading-6 text-neutral-100">
-        Grid CSS make your life easier
+        {{ post.title }}
       </h3>
       <p class="text-neutral-100 mt-4 text-sm font-normal">
-        asdasdasdhgjasd hsagdhjgashjdg hjagsdjhagsdhjga sjhdgb
+       {{ post.description }}
       </p>
-    </div>
-    <div class="author mt-auto pt-16 flex items-center">
+      <div class="author mt-auto pt-16 flex items-center">
       <div class="author-pic rounded-full bg-teal-200 h-14 w-14 mr-4"></div>
       <div class="author-info">
         <p class="text-base leading-5 font-medium text-neutral-black">
@@ -25,14 +24,21 @@
         >
       </div>
     </div>
+    </div>
+
   </div>
 </template>
 
-<script>
-import { onMounted, ref } from "vue";
+<script setup>
+import { defineComponent, onMounted, ref } from "vue";
 import { supabase} from '../supabase/supabase.js'
 
-export default {
-  name: "PostCard",
-};
+defineComponent({
+  name: 'PostCard'
+})
+
+defineProps({
+  post: Object
+})
+
 </script>
